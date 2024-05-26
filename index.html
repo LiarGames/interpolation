@@ -1,0 +1,57 @@
+<!DOCTYPE?html>
+<html>
+<head>
+    <title>³»»ð °è»ê±â</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        table {border-collapse: collapse;}
+        td {
+            padding:5px 10px; 
+            text-align: center;
+        }
+        input {border: none;}
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>VALUE</th>
+            <th>SETTING</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="val1"></td>
+            <td><input type="text" id="set1"></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="val2"></td>
+            <td><input type="text" id="set2"></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="val3"></td>
+            <td id="result" style="background-color: greenyellow;"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="calculate()">Calculate</button></td>
+        </tr>
+    </table>
+    <script>
+        function calculate() {
+            var val1 = parseFloat(document.getElementById('val1').value);
+            var set1 = parseFloat(document.getElementById('set1').value);
+            var val2 = parseFloat(document.getElementById('val2').value);
+            var set2 = parseFloat(document.getElementById('set2').value);
+            var val3 = parseFloat(document.getElementById('val3').value);
+
+            var result = set1 + ((set2 - set1) * (val3 - val1) / (val2 - val1));
+
+            document.getElementById('result').innerText = result.toFixed(2);
+        }
+    </script>
+</body>
+</html>
